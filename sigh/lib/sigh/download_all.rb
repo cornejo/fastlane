@@ -78,7 +78,7 @@ module Sigh
       UI.important("No profiles available for download") if profiles.empty?
 
       profiles.each do |profile|
-        if profile.valid?
+        if profile.valid? || Sigh.config[:skip_certificate_verification]
           UI.message("Downloading profile '#{profile.name}'...")
           download_profile(profile)
         else
