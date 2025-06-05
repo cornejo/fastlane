@@ -93,9 +93,8 @@ module Spaceship
           attributes: {
             name: name,
             profileType: profile_type,
-            # Disabling this for now as the api seems to reject it
-            #templateName: template_name,
-            #isOfflineProfile: is_offline_profile
+            templateName: template_name,
+            isOfflineProfile: is_offline_profile
           }
         )
         return resp.to_models.first
